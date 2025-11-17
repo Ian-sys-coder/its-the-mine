@@ -1,0 +1,332 @@
+/* --- COLOR VARIABLES --- */
+:root{
+  --primary:#1f2937; /* dark slate */
+  --accent:#0ea5a4;  /* teal accent */
+  --muted:#6b7280;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --max-width:1100px;
+}
+
+/* --- RESET --- */
+*{box-sizing:border-box; margin:0; padding:0;}
+
+/* --- BODY BASE STYLING --- */
+body{
+  font-family: Inter, system-ui;
+  color: var(--primary);
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+/* --- HEADER FOR ALL PAGES (UPDATED) --- */
+header{
+  background: linear-gradient(to right, #ffffff, #e6fffa);
+  box-shadow:0 2px 6px rgba(16,24,40,0.06);
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header h1{
+  font-size:2rem;
+  font-family: "Algerian", serif;
+  font-weight:900;
+  color:#0f172a;
+  letter-spacing:2px;
+  text-transform: uppercase;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:0.75rem;
+  align-items:center;
+}
+
+nav a{
+  display:inline-block;
+  padding:0.6rem 0.9rem;
+  text-decoration:none;
+  color:var(--primary);
+  border-radius:8px;
+  font-weight:500;
+}
+
+nav a.active{
+  background:rgba(14,165,164,0.12);
+  color:var(--accent);
+}
+
+/* --- FOOTER --- */
+footer{
+  margin-top:2rem;
+  padding:1rem;
+  text-align:center;
+  background: var(--card);
+  color:var(--muted);
+  font-size:0.9rem;
+  border-top:2px solid var(--accent);
+}
+
+/* --- HOMEPAGE BACKGROUND ENHANCED --- */
+body.home {
+  background-image: 
+      linear-gradient(rgba(14,165,164,0.25), rgba(14,165,164,0.25)),
+      url("ian1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+repeat;
+  background-attachment: fixed;
+}
+
+
+/* --- HERO SECTION CENTERED (CSS ONLY) --- */
+body.home .hero {
+  display: flex;                /* make hero a flex container */
+  flex-direction: column;       /* stack items vertically */
+  align-items: center;          /* center horizontally */
+  justify-content: center;      /* optional: vertical centering */
+  padding: 4rem 1.25rem;
+  background: rgba(14,165,164,0.05);
+  border-bottom: 2px solid var(--accent);
+  text-align: center;           /* center inline content */
+}
+
+body.home .hero h2,
+body.home .hero p {
+  margin: 0 0 1.5rem 0;        /* spacing between heading/text and button */
+}
+
+body.home .hero .btn {
+  display: inline-block;
+  margin: 0 auto;               /* center the button */
+}
+
+
+
+body.home .hero h2{
+  font-size:2.5rem;
+  margin-bottom:1rem;
+  font-weight:800;
+  color: var(--primary);
+}
+
+body.home .hero p{
+  font-size:1.2rem;
+  margin:0.5rem 0;
+  color: var(--muted);
+  line-height:1.8;
+  font-family: "Cambria", "Georgia", serif;
+}
+
+body.home .hero .btn{
+  display:inline-block;
+  margin-top:1.5rem;
+  padding:0.75rem 1.5rem;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+  font-size:1.1rem;
+  text-decoration:none;
+  border-radius:8px;
+  transition: background 0.3s ease;
+}
+
+body.home .hero .btn:hover{
+  background:#089191;
+}
+
+/* --- PARAGRAPH BLOCKS (UPDATED) --- */
+body.home .homepage-paragraphs{
+  padding:2rem 1rem;
+}
+
+body.home .paragraph-block{
+  background: rgba(255,255,255,0.85);
+  border-left:6px solid var(--accent);
+  border-radius:12px;
+  padding:2rem 1.5rem;
+  margin:2rem auto;
+  max-width:900px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+  text-align:center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.home .paragraph-block h2{
+  font-size:2rem;
+  margin-bottom:1rem;
+  color:#0ea5a4;
+  font-weight:700;
+}
+
+body.home .paragraph-block p{
+  font-size:1.1rem;
+  line-height:1.8;
+  color:var(--primary);
+}
+
+body.home .paragraph-block{
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-left:6px solid var(--accent);
+}
+
+
+
+/* --- PRODUCT GRID (VERTICAL STACKED FOR HOME) --- */
+body.home .product-grid{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+  margin:2rem 0;
+}
+
+body.home .product-card{
+  width:100%;
+  max-width:600px;
+  margin:0 auto;
+  background:var(--card);
+  border-radius:12px;
+  padding:1rem;
+  box-shadow:0 6px 12px rgba(15,23,42,0.08);
+  text-align:center;
+}
+
+body.home .product-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  transition: transform 0.3s ease;
+}
+
+body.home .product-card:first-of-type img{
+  height:300px;
+}
+
+body.home .product-card:nth-of-type(2) img{
+  height:250px;
+}
+
+body.home .product-card h3{
+  margin-top:0.75rem;
+  font-size:1.2rem;
+  color: var(--primary);
+}
+
+body.home .product-card img:hover{
+  transform: scale(1.05);
+}
+
+/* --- CATALOGUE/SHOP (UNCHANGED) --- */
+body:not(.home) .product-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:2rem;
+  margin:2rem;
+}
+
+body:not(.home) .product-card{
+  background: var(--card);
+  border-radius:12px;
+  padding:1rem;
+  box-shadow:0 4px 8px rgba(15,23,42,0.08);
+  text-align:center;
+}
+
+body:not(.home) .product-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* --- ORDER PAGE IMAGES (DOUBLED FINAL SIZE) --- */
+body.order img {
+  width: 480px !important;  
+  height: 400px !important;  
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: 6px !important;
+}
+
+/* --- ORDER PAGE FORM --- */
+body.order form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:500px;
+  margin:2rem auto;
+  padding:1.5rem;
+  background:var(--card);
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(15,23,42,0.08);
+}
+
+body.order form label{
+  font-weight:600;
+}
+
+body.order form input,
+body.order form select,
+body.order form textarea{
+  padding:0.6rem;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:1rem;
+}
+
+body.order form button{
+  padding:0.75rem 1rem;
+  background: var(--accent);
+  color:white;
+  font-weight:600;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition: background 0.3s ease;
+}
+
+body.order form button:hover{
+  background:#089191;
+}
+
+/* --- CONTACT PAGE --- */
+body.contact{
+  background: linear-gradient(to bottom, #f0fdfa, #ccfbf1);
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width:900px){
+  body.home .hero h2{
+    font-size:2rem;
+  }
+  body.home .paragraph-block h2{
+    font-size:1.7rem;
+  }
+  body.home .paragraph-block p{
+    font-size:1rem;
+  }
+  body.home .product-card img{
+    height:200px;
+  }
+  header h1{
+    font-size:1.8rem;
+  }
+  nav ul{
+    flex-direction:column;
+    gap:0.5rem;
+    align-items:flex-start;
+  }
+}

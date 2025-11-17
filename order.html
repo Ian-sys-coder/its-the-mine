@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order - Men's Shoe Collection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="order">
+
+<header>
+    <h1>Men's Shoe Collection</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="order.html" class="active">Order</a></li>
+            <li><a href="about.html">About Us</a></li>
+             <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<section class="selected-shoe">
+    <img id="shoeImage" src="" alt="Selected Shoe">
+    <div class="shoe-details">
+        <h2 id="shoeName"></h2>
+        <p id="shoeDescription"></p>
+        <p id="shoePrice" style="font-weight:bold;"></p>
+    </div>
+</section>
+
+<section>
+    <form action="thankyou.html" class="order-form">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Phone Number</label>
+        <input type="text" name="phone" required>
+
+        <label>Selected Shoe</label>
+        <input type="text" id="shoeInput" name="shoe" readonly>
+
+        <label>Size</label>
+        <input type="number" name="size" required>
+
+        <label>Delivery Location</label>
+        <input type="text" name="location" required>
+
+        <button type="submit">Submit Order</button>
+    </form>
+</section>
+
+<footer>
+    <p>Contact: +256708077236 | Email: lukwagoi609@gmail.com</p>
+    <p>&copy; 2025 Men's Shoe Collection. All rights reserved.</p>
+</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const shoeName = params.get('shoe');
+const shoeImg = params.get('img');
+const shoeDescription = params.get('desc');
+const shoePrice = params.get('price');
+
+if(shoeName && shoeImg){
+    document.getElementById('shoeName').textContent = shoeName;
+    document.getElementById('shoeImage').src = shoeImg;
+    document.getElementById('shoeImage').alt = shoeName;
+    document.getElementById('shoeInput').value = shoeName;
+    if(shoeDescription) document.getElementById('shoeDescription').textContent = shoeDescription;
+    if(shoePrice) document.getElementById('shoePrice').textContent = shoePrice;
+}
+</script>
+
+</body>
+</html>
